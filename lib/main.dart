@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_api/ui/pages/home.dart';
+import 'package:getx_api/routes/page.dart';
 
 void main() => runApp(MyApis());
 
 class MyApis extends StatelessWidget {
-  const MyApis({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Home(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      getPages: AppPages.pages,
     );
   }
 }
