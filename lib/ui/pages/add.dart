@@ -9,6 +9,7 @@ import 'package:getx_api/ui/componens/form.dart';
 class Add extends StatelessWidget {
   final addP = Get.find<AddC>();
   final dataP = Get.find<DatasC>();
+  // final dataP = Get.put(DatasC());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,41 +43,34 @@ class Add extends StatelessWidget {
                   //   height: 15,
                   // ),
                   CustomForm(
-                    title: "Nama",
-                    hintText: "Nama Lengkap",
+                    title: "NPM",
+                    hintText: "NPM",
                     controller: addP.npmC,
-                  ),
-                  SizedBox(
-                    height: 15,
                   ),
                   CustomForm(
                     title: "Nama",
                     hintText: "Nama Lengkap",
                     controller: addP.namaC,
                   ),
-                  SizedBox(
-                    height: 15,
-                  ),
                   CustomForm(
                     title: "Nomor WA/Tlpn",
                     hintText: "Nomor",
                     controller: addP.nomerC,
-                  ),
-                  SizedBox(
-                    height: 15,
                   ),
                   CustomForm(
                     title: "Email",
                     hintText: "E-Mail",
                     controller: addP.emailC,
                   ),
-                  SizedBox(
-                    height: 15,
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('ADD DATA'),
                   ),
                   CustomButton(
                     title: "ADD DATA",
                     onPressed: () {},
                     Color: bitu,
+                    margin: EdgeInsets.only(top: 15),
                   ),
                 ],
               ),

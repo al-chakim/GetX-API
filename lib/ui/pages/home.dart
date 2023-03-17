@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/controllers/dataC.dart';
 import 'package:getx_api/routes/name.dart';
+import 'package:getx_api/ui/colors/color.dart';
 
 class Home extends StatelessWidget {
   final datasC = Get.find<DatasC>();
@@ -10,7 +11,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dataku'),
+        backgroundColor: bitu,
+        title: Text(
+          'Dataku',
+          style: whiteTextStyle.copyWith(
+            fontWeight: semibold,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -27,7 +34,12 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: datasC.datas.isEmpty
                   ? Center(
-                      child: Text('Data Masih Kosong'),
+                      child: Text(
+                        'Data Masih Kosong',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 15,
+                        ),
+                      ),
                     )
                   : ListView.builder(
                       itemCount: datasC.datas.length,
@@ -37,7 +49,9 @@ class Home extends StatelessWidget {
                         subtitle: Text("${datasC.datas[i].email}"),
                         trailing: IconButton(
                           onPressed: () {},
-                          icon: Icon(Icons.delete_forever),
+                          icon: Icon(
+                            Icons.delete_forever,
+                          ),
                         ),
                         onTap: () {
                           Get.toNamed(
@@ -52,8 +66,9 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: bitu,
         onPressed: () {
-          // Get.toNamed(RuteNama.data);
+          Get.toNamed(RuteNama.detail);
         },
         child: Icon(Icons.download),
       ),
