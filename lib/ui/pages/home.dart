@@ -28,7 +28,9 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(RuteNama.data);
+        },
         child: Icon(Icons.download),
       ),
     );

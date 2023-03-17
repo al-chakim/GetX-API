@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-class ProfileC extends GetxController {
+class DataC extends GetxController {
   late TextEditingController npmC;
   late TextEditingController namaC;
   late TextEditingController nomerC;
