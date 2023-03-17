@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/routes/name.dart';
-import 'package:getx_api/ui/pages/add.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -27,6 +26,10 @@ class Home extends StatelessWidget {
             child: Text('Data Masih Kosong'),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.download),
       ),
     );
   }

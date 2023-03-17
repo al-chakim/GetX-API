@@ -10,6 +10,28 @@ class Add extends StatelessWidget {
       appBar: AppBar(
         title: Text('Tambah Data'),
       ),
+      body: SafeArea(
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  TextField(
+                    autocorrect: false,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
