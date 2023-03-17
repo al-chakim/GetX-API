@@ -35,5 +35,42 @@ class UsersC extends GetxController {
     }
   }
 
-  void edit() {}
+  User userById(String id) {
+    return users.firstWhere((element) => element.id == id);
+  }
+
+  void edit(String id, String nama, String npm, String email, String nomer) {
+    if (npm != '' && nama != '' && email != '' && nomer != '') {
+      if (email.contains('@')) {
+        final user = userById(id);
+        user.nama = nama;
+        user.npm = npm;
+        user.nomer = nomer;
+        user.email = email;
+        users.refresh();
+        Get.back();
+      } else {
+        snackBarError("Masukkan Email Valid");
+      }
+    } else {
+      snackBarError("Isi Seluruh Data");
+    }
+  }
+
+  Future<bool> delete(String id) async {
+    bool _deleted = false;
+    await Get.defaultDialog(
+      title: "DELETE",
+      middleText: "Apakah anda yakin akan menghapus data ini?",
+      textConfirm: "Ya",
+      confirmTextColor: Colors.white,
+      onConfirm: () {
+        users.removeWhere((element) => element.id == id);
+        _deleted = true;
+        Get.back();
+      },
+      textCancel: "Tidak",
+    );
+    return _deleted;
+  }
 }
