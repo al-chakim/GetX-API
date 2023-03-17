@@ -13,7 +13,13 @@ class Add extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tambah Data'),
+        title: Text(
+          'Tambah Data',
+          style: whiteTextStyle.copyWith(
+            fontWeight: semibold,
+          ),
+        ),
+        backgroundColor: bitu,
       ),
       body: SafeArea(
         child: ListView(
@@ -67,10 +73,11 @@ class Add extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  // CustomButton(
-                  //   title: "ADD DATA",
-                  //   onPressed: () {},
-                  // ),
+                  CustomButton(
+                    title: "ADD DATA",
+                    onPressed: () {},
+                    Color: bitu,
+                  ),
                 ],
               ),
             )

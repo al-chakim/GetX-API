@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getx_api/ui/colors/color.dart';
 
 class CustomButton extends StatelessWidget {
@@ -6,6 +7,7 @@ class CustomButton extends StatelessWidget {
   final double widht;
   final VoidCallback onPressed;
   final EdgeInsets margin;
+  final dynamic Color;
 
   const CustomButton({
     Key? key,
@@ -13,6 +15,7 @@ class CustomButton extends StatelessWidget {
     this.widht = double.infinity,
     required this.onPressed,
     this.margin = EdgeInsets.zero,
+    this.Color,
   }) : super(key: key);
 
   @override
@@ -23,7 +26,7 @@ class CustomButton extends StatelessWidget {
       height: 55,
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: ungu,
+          backgroundColor: Color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(defaultRadius),
           ),
