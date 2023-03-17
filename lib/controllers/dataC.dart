@@ -22,8 +22,8 @@ class DatasC extends GetxController {
             id: DateTime.now().toString(),
             npm: npm,
             nama: nama,
-            email: email,
             nomer: nomer,
+            email: email,
           ),
         );
         Get.back();

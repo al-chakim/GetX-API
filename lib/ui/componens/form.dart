@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:getx_api/controllers/addC.dart';
+import 'package:getx_api/controllers/dataC.dart';
 import 'package:getx_api/ui/colors/color.dart';
+import 'package:get/get.dart';
 
 class CustomForm extends StatelessWidget {
+  final coba = Get.put(AddC());
+  final cobi = Get.put(DatasC());
+
   final String title;
   final String hintText;
   final bool obscureText;
   final TextEditingController controller;
 
-  const CustomForm({
+  CustomForm({
     Key? key,
     required this.title,
     required this.hintText,
@@ -40,7 +46,15 @@ class CustomForm extends StatelessWidget {
                 borderSide: BorderSide(color: bitu),
               ),
             ),
-          )
+            // onEditingComplete: () {
+            //   cobi.datas(
+            //     coba.npmC.text,
+            //     coba.namaC.text,
+            //     coba.nomerC.text,
+            //     coba.emailC.text,
+            //   );
+            // },
+          ),
         ],
       ),
     );
