@@ -7,8 +7,8 @@ import 'package:getx_api/ui/componens/button.dart';
 // import 'package:getx_api/ui/componens/form.dart';
 
 class Add extends StatelessWidget {
-  final dataP = Get.find<DatasC>();
-  final addP = Get.find<AddC>();
+  final datap = Get.find<DatasC>();
+  final addp = Get.find<AddC>();
   // final dataP = Get.put(DatasC());
   @override
   Widget build(BuildContext context) {
@@ -31,11 +31,9 @@ class Add extends StatelessWidget {
                 children: [
                   TextField(
                     cursorColor: item,
-                    controller: addP.npmC,
+                    controller: addp.npmC,
                     autocorrect: false,
-                    textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
-                      // hintText: 'NPM',
                       labelText: 'NPM',
                       labelStyle: TextStyle(color: item),
                       border: OutlineInputBorder(
@@ -52,11 +50,9 @@ class Add extends StatelessWidget {
                   ),
                   TextField(
                     cursorColor: item,
-                    controller: addP.namaC,
+                    controller: addp.namaC,
                     autocorrect: false,
-                    //textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
-                      // hintText: 'NPM',
                       labelText: 'Nama',
                       labelStyle: TextStyle(color: item),
                       border: OutlineInputBorder(
@@ -73,10 +69,9 @@ class Add extends StatelessWidget {
                   ),
                   TextField(
                     cursorColor: item,
-                    controller: addP.nomerC,
+                    controller: addp.nomerC,
                     keyboardType: TextInputType.phone,
                     autocorrect: false,
-                    //textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                       // hintText: 'NPM',
                       labelText: 'Nomor',
@@ -96,9 +91,8 @@ class Add extends StatelessWidget {
                   TextField(
                     cursorColor: item,
                     keyboardType: TextInputType.emailAddress,
-                    controller: addP.emailC,
+                    controller: addp.emailC,
                     autocorrect: false,
-                    // textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                       // hintText: 'NPM',
                       labelText: 'Email',
@@ -111,12 +105,14 @@ class Add extends StatelessWidget {
                         borderSide: BorderSide(color: bitu),
                       ),
                     ),
-                    onEditingComplete: () => dataP.add(
-                      addP.npmC.text,
-                      addP.namaC.text,
-                      addP.emailC.text,
-                      addP.nomerC.text,
-                    ),
+                    // onEditingComplete: () {
+                    //   datap.add(
+                    //     addp.npmC.text,
+                    //     addp.namaC.text,
+                    //     addp.nomerC.text,
+                    //     addp.emailC.text,
+                    //   );
+                    // },
                   ),
                   SizedBox(
                     height: 15,
@@ -152,12 +148,14 @@ class Add extends StatelessWidget {
                   // Custom Button
                   CustomButton(
                     title: "ADD DATA",
-                    onPressed: () => dataP.add(
-                      addP.npmC.text,
-                      addP.namaC.text,
-                      addP.emailC.text,
-                      addP.phoneC.text,
-                    ),
+                    onPressed: () {
+                      datap.add(
+                        addp.npmC.text,
+                        addp.namaC.text,
+                        addp.nomerC.text,
+                        addp.emailC.text,
+                      );
+                    },
                     Color: bitu,
                     margin: EdgeInsets.only(top: 15),
                   ),

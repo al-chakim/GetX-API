@@ -18,8 +18,8 @@ class AddC extends GetxController {
 
   @override
   void onClose() {
-    namaC.dispose();
     npmC.dispose();
+    namaC.dispose();
     nomerC.dispose();
     emailC.dispose();
     super.onClose();

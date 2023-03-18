@@ -14,7 +14,12 @@ class DatasC extends GetxController {
     );
   }
 
-  void add(String id, String nama, String npm, String email, String nomer) {
+  void add(
+    String npm,
+    String nama,
+    String nomer,
+    String email,
+  ) {
     if (npm != '' && nama != '' && email != '' && nomer != '') {
       if (email.contains('@')) {
         datas.add(
@@ -39,7 +44,13 @@ class DatasC extends GetxController {
     return datas.firstWhere((element) => element.id == id);
   }
 
-  void edit(String id, String nama, String npm, String email, String nomer) {
+  void edit(
+    String id,
+    String nama,
+    String npm,
+    String email,
+    String nomer,
+  ) {
     if (npm != '' && nama != '' && email != '' && nomer != '') {
       if (email.contains('@')) {
         final data = dataById(id);

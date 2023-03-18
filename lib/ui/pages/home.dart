@@ -51,6 +51,7 @@ class Home extends StatelessWidget {
                           onPressed: () {},
                           icon: Icon(
                             Icons.delete_forever,
+                            color: Colors.red,
                           ),
                         ),
                         onTap: () {
