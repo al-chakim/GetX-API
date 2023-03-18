@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
         child: Center(
           child: Obx(
             () => Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               child: datasC.datas.isEmpty
                   ? Center(
                       child: Text(
@@ -44,7 +44,9 @@ class Home extends StatelessWidget {
                   : ListView.builder(
                       itemCount: datasC.datas.length,
                       itemBuilder: (context, i) => ListTile(
-                        leading: CircleAvatar(),
+                        leading: CircleAvatar(
+                          backgroundColor: ungu,
+                        ),
                         title: Text("${datasC.datas[i].nama}"),
                         subtitle: Text("${datasC.datas[i].email}"),
                         trailing: IconButton(
