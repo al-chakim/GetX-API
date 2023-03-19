@@ -133,7 +133,7 @@ class Add extends StatelessWidget {
 
                   // Custom Button
                   CustomButton(
-                    title: "ADD DATA",
+                    title: "TAMBAH DATA",
                     onPressed: () {
                       datap.add(
                         addp.npmC.text,

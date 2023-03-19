@@ -55,8 +55,8 @@ class DatasC extends GetxController {
     if (npm != '' && nama != '' && email != '' && nomer != '') {
       if (email.contains('@')) {
         final data = dataById(id);
-        data.nama = nama;
         data.npm = npm;
+        data.nama = nama;
         data.nomer = nomer;
         data.email = email;
         datas.refresh();
