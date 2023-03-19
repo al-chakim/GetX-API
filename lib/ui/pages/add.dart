@@ -5,12 +5,10 @@ import 'package:getx_api/controllers/dataC.dart';
 import 'package:getx_api/ui/components/form.dart';
 import 'package:getx_api/ui/themes/color.dart';
 import 'package:getx_api/ui/components/button.dart';
-// import 'package:getx_api/ui/componens/form.dart';
 
 class Add extends StatelessWidget {
   final datap = Get.find<DatasC>();
   final addp = Get.find<AddC>();
-  // final dataP = Get.put(DatasC());
   @override
   Widget build(BuildContext context) {
     return Scaffold(

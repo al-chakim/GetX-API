@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/controllers/dataC.dart';
 import 'package:getx_api/controllers/detailC.dart';
+import 'package:getx_api/routes/name.dart';
 import 'package:getx_api/ui/components/button.dart';
 import 'package:getx_api/ui/components/form.dart';
 import 'package:getx_api/ui/themes/color.dart';
@@ -12,6 +13,7 @@ class Detail extends StatelessWidget {
   final detailp = Get.find<DetailC>();
   final datap = Get.find<DatasC>();
   final String uid = Get.arguments;
+
   @override
   Widget build(BuildContext context) {
     final Data data = datap.dataById(uid);
@@ -29,6 +31,18 @@ class Detail extends StatelessWidget {
           ),
         ),
         backgroundColor: bitu,
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       datap.delete(uid).then(
+        //             (value) => (delete) {
+        //               if (delete) Get.back();
+        //             },
+        //           );
+        //     },
+        //     icon: Icon(Icons.delete_forever),
+        //   ),
+        // ],
       ),
       body: SafeArea(
         child: ListView(
