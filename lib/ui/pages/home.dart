@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/controllers/dataC.dart';
 import 'package:getx_api/routes/name.dart';
-import 'package:getx_api/ui/colors/color.dart';
+import 'package:getx_api/ui/themes/color.dart';
 
 class Home extends StatelessWidget {
   final datasC = Get.find<DatasC>();
@@ -50,8 +50,10 @@ class Home extends StatelessWidget {
                         title: Text("${datasC.datas[i].nama}"),
                         subtitle: Text("${datasC.datas[i].email}"),
                         trailing: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
+                          onPressed: () {
+                            datasC.delete(datasC.datas[i].id);
+                          },
+                          icon: const Icon(
                             Icons.delete_forever,
                             color: Colors.red,
                           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/models/data.dart';
+import 'package:getx_api/ui/themes/color.dart';
 
 class DatasC extends GetxController {
   var datas = List<Data>.empty().obs;
@@ -71,10 +72,21 @@ class DatasC extends GetxController {
   Future<bool> delete(String id) async {
     bool _deleted = false;
     await Get.defaultDialog(
+      buttonColor: Colors.white,
+      backgroundColor: bitu,
+      cancelTextColor: Colors.white,
+      contentPadding: const EdgeInsets.all(20),
       title: "DELETE",
+      titleStyle: const TextStyle(
+        color: Colors.white,
+      ),
+      titlePadding: const EdgeInsets.only(top: 20),
       middleText: "Apakah anda yakin akan menghapus data ini?",
+      middleTextStyle: const TextStyle(
+        color: Colors.white,
+      ),
       textConfirm: "Ya",
-      confirmTextColor: Colors.white,
+      confirmTextColor: Colors.red,
       onConfirm: () {
         datas.removeWhere((element) => element.id == id);
         _deleted = true;
@@ -82,6 +94,15 @@ class DatasC extends GetxController {
       },
       textCancel: "Tidak",
     );
+
+    // await Get.dialog(
+    //   AlertDialog(
+    //     title: Text('Judul'),
+    //     content: Text('Isi pesan'),
+    //     actions: [],
+    //   ),
+    // );
+
     return _deleted;
   }
 }

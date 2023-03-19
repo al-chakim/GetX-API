@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_api/ui/colors/color.dart';
+import 'package:getx_api/ui/themes/color.dart';
 
 class Detail extends StatelessWidget {
   @override

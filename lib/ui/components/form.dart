@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getx_api/controllers/addC.dart';
 import 'package:getx_api/controllers/dataC.dart';
-import 'package:getx_api/ui/colors/color.dart';
+import 'package:getx_api/ui/themes/color.dart';
 import 'package:get/get.dart';
 
 class CustomForm extends StatelessWidget {
