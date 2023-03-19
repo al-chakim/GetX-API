@@ -47,10 +47,10 @@ class DatasC extends GetxController {
 
   void edit(
     String id,
-    String nama,
     String npm,
-    String email,
+    String nama,
     String nomer,
+    String email,
   ) {
     if (npm != '' && nama != '' && email != '' && nomer != '') {
       if (email.contains('@')) {

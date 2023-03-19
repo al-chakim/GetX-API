@@ -124,11 +124,13 @@ class Add extends StatelessWidget {
                     title: "Nomor WA/Tlpn",
                     hintText: "Nomor",
                     controller: addp.nomerC,
+                    masuk: TextInputType.phone,
                   ),
                   CustomForm(
                     title: "Email",
                     hintText: "E-Mail",
                     controller: addp.emailC,
+                    masuk: TextInputType.emailAddress,
                   ),
 
                   // Custom Button

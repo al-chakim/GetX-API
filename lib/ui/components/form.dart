@@ -12,6 +12,7 @@ class CustomForm extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   final TextEditingController controller;
+  final dynamic masuk;
 
   CustomForm({
     Key? key,
@@ -19,6 +20,7 @@ class CustomForm extends StatelessWidget {
     required this.hintText,
     this.obscureText = false,
     required this.controller,
+    this.masuk,
   }) : super(key: key);
 
   @override
@@ -34,6 +36,7 @@ class CustomForm extends StatelessWidget {
           ),
           TextFormField(
             cursorColor: item,
+            keyboardType: masuk,
             controller: controller,
             obscureText: obscureText,
             decoration: InputDecoration(
@@ -46,14 +49,6 @@ class CustomForm extends StatelessWidget {
                 borderSide: BorderSide(color: bitu),
               ),
             ),
-            // onEditingComplete: () {
-            //   cobi.datas(
-            //     coba.npmC.text,
-            //     coba.namaC.text,
-            //     coba.nomerC.text,
-            //     coba.emailC.text,
-            //   );
-            // },
           ),
         ],
       ),

@@ -51,11 +51,16 @@ class Detail extends StatelessWidget {
                     title: 'Nomor WA/Tlpn',
                     hintText: "Nama",
                     controller: detailp.nomerC,
+                    masuk: TextInputType.phone,
                   ),
                   CustomForm(
                     title: 'Email',
                     hintText: "Email",
                     controller: detailp.emailC,
+                    masuk: TextInputType.emailAddress,
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   CustomButton(
                     title: 'SIMPAN PERUBAHAN',
