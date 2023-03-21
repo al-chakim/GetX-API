@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/models/data.dart';
@@ -23,24 +25,19 @@ class DatasC extends GetxController {
     String email,
   ) {
     if (npm != '' && nama != '' && email != '' && nomer != '') {
-      String date = DateTime.now().toString();
       if (email.contains('@')) {
-        datas.add(
-          Data(
-            id: date,
-            npm: npm,
-            nama: nama,
-            nomer: nomer,
-            email: email,
-          ),
-        );
-
-        DatasS().postData(
-          date,
-          npm,
-          nama,
-          nomer,
-          email,
+        DatasS().postData(npm, nama, nomer, email).then(
+          (value) {
+            datas.add(
+              Data(
+                id: value.body["name"],
+                npm: npm,
+                nama: nama,
+                nomer: nomer,
+                email: email,
+              ),
+            );
+          },
         );
 
         Get.back();
@@ -65,12 +62,17 @@ class DatasC extends GetxController {
   ) {
     if (npm != '' && nama != '' && email != '' && nomer != '') {
       if (email.contains('@')) {
-        final data = dataById(id);
-        data.npm = npm;
-        data.nama = nama;
-        data.nomer = nomer;
-        data.email = email;
-        datas.refresh();
+        DatasS().editData(id, npm, nama, nomer, email).then(
+          (_) {
+            final data = dataById(id);
+            data.npm = npm;
+            data.nama = nama;
+            data.nomer = nomer;
+            data.email = email;
+            datas.refresh();
+          },
+        );
+
         Get.back();
       } else {
         snackBarError("Masukkan Email Valid");
@@ -99,20 +101,15 @@ class DatasC extends GetxController {
       textConfirm: "Ya",
       confirmTextColor: Colors.red,
       onConfirm: () {
-        datas.removeWhere((element) => element.id == id);
-        _deleted = true;
+        DatasS().deleteData(id).then((_) {
+          datas.removeWhere((element) => element.id == id);
+          _deleted = true;
+        });
+
         Get.back();
       },
       textCancel: "Tidak",
     );
-
-    // await Get.dialog(
-    //   AlertDialog(
-    //     title: Text('Judul'),
-    //     content: Text('Isi pesan'),
-    //     actions: [],
-    //   ),
-    // );
 
     return _deleted;
   }
