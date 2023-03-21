@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/models/data.dart';
+import 'package:getx_api/services/datasS.dart';
 import 'package:getx_api/ui/themes/color.dart';
 
 class DatasC extends GetxController {
@@ -22,16 +23,26 @@ class DatasC extends GetxController {
     String email,
   ) {
     if (npm != '' && nama != '' && email != '' && nomer != '') {
+      String date = DateTime.now().toString();
       if (email.contains('@')) {
         datas.add(
           Data(
-            id: DateTime.now().toString(),
+            id: date,
             npm: npm,
             nama: nama,
             nomer: nomer,
             email: email,
           ),
         );
+
+        DatasS().postData(
+          date,
+          npm,
+          nama,
+          nomer,
+          email,
+        );
+
         Get.back();
       } else {
         snackBarError("Masukkan Email Valid");
