@@ -39,7 +39,6 @@ class DatasC extends GetxController {
             );
           },
         );
-
         Get.back();
       } else {
         snackBarError("Masukkan Email Valid");
@@ -52,6 +51,18 @@ class DatasC extends GetxController {
   Data dataById(String id) {
     return datas.firstWhere((element) => element.id == id);
   }
+
+  // Data dataById(
+  //   String id,
+  //   // String npm,
+  //   // String nama,
+  //   // String nomer,
+  //   // String email,
+  // ) {
+  //   DatasS().getData(id).then((value) {
+  //     datas.firstWhere((element) => element.id == id);
+  //   });
+  // }
 
   void edit(
     String id,
@@ -72,7 +83,6 @@ class DatasC extends GetxController {
             datas.refresh();
           },
         );
-
         Get.back();
       } else {
         snackBarError("Masukkan Email Valid");
