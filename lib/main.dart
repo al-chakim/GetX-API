@@ -35,7 +35,10 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Get.to(() => Dua());
+                Get.to(
+                  () => Dua(),
+                  arguments: 'Argument from Home Page',
+                );
               },
               child: const Text('Next Page >>'),
             ),
@@ -64,6 +67,18 @@ class Dua extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20,
               ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "${Get.arguments}",
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             ElevatedButton(
               onPressed: () {
@@ -95,6 +110,12 @@ class Tiga extends StatelessWidget {
               'Third Page',
               style: TextStyle(
                 fontSize: 20,
+              ),
+            ),
+            Text(
+              "${Get.previousRoute}",
+              style: TextStyle(
+                fontSize: 18,
               ),
             ),
             ElevatedButton(
