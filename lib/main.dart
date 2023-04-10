@@ -56,9 +56,20 @@ class Home extends GetView<MyC> {
       ),
       body: Center(
         child: controller.obx(
-          (state) => Text(state!),
+          (state) => Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Id : ${state!["id"]}"),
+              Text("Name : ${state["first_name"] + state["last_name"]}"),
+              Text("Email : ${state["email"]}"),
+              CircleAvatar(
+                backgroundImage: NetworkImage('${state['avatar']}'),
+                radius: 30,
+              )
+            ],
+          ),
           onEmpty: Text("Data belum ada"),
-          onError: (error) => Text('Terjadi kesalahan'),
+          onError: (error) => Text(error.toString()),
         ),
       ),
       floatingActionButton: FloatingActionButton(
