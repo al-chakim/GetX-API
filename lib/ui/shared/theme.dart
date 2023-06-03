@@ -4,6 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 double defaultMargin = 24.0;
 double defaultRadius = 17.0;
 
+FontWeight light = FontWeight.w300;
+FontWeight reguler = FontWeight.w400;
+FontWeight medium = FontWeight.w500;
+FontWeight semibold = FontWeight.w600;
+FontWeight bold = FontWeight.w700;
+FontWeight extrabold = FontWeight.w800;
+FontWeight black = FontWeight.w900;
+
 Color ungu = Color(0xff5C40CC);
 Color item = Color(0xff1F1449);
 Color abu = Color(0xff9698A9);
@@ -28,11 +36,3 @@ TextStyle greenTextStyle = GoogleFonts.poppins(color: ijo);
 TextStyle redTextStyle = GoogleFonts.poppins(color: merah);
 
 TextStyle purpleTextStyle = GoogleFonts.poppins(color: ungu);
-
-FontWeight light = FontWeight.w300;
-FontWeight reguler = FontWeight.w400;
-FontWeight medium = FontWeight.w500;
-FontWeight semibold = FontWeight.w600;
-FontWeight bold = FontWeight.w700;
-FontWeight extrabold = FontWeight.w800;
-FontWeight black = FontWeight.w900;

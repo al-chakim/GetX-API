@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getx_api/ui/themes/color.dart';
+import 'package:getx_api/ui/shared/theme.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           title,
           style: whiteTextStyle.copyWith(
-            fontSize: 15,
+            fontSize: 18,
             fontWeight: medium,
           ),
         ),

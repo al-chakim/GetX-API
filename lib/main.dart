@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_api/controllers/dataC.dart';
-import 'package:getx_api/routes/page.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:getx_api/controllers/loginC.dart';
+import 'package:getx_api/routes/route_page.dart';
+import 'package:getx_api/ui/pages/login.dart';
 
-void main() => runApp(MyApis());
+void main() => runApp(MyStorage());
 
-class MyApis extends StatelessWidget {
-  final dataC = Get.put(DatasC());
+class MyStorage extends StatelessWidget {
+  final loginC = Get.put(LoginC());
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      getPages: AppPages.pages,
+      home: LoginPage(),
+      getPages: AppPage.pages,
     );
   }
 }

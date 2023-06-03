@@ -1,45 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:getx_api/controllers/addC.dart';
-import 'package:getx_api/controllers/dataC.dart';
-import 'package:getx_api/ui/themes/color.dart';
 import 'package:get/get.dart';
+import 'package:getx_api/controllers/loginC.dart';
+import 'package:getx_api/ui/shared/theme.dart';
 
 class CustomForm extends StatelessWidget {
-  final coba = Get.put(AddC());
-  final cobi = Get.put(DatasC());
-
   final String title;
   final String hintText;
   final bool obscureText;
   final TextEditingController controller;
-  final dynamic masuk;
+
+  final dynamic suffixIcon;
+  //final VoidCallback press;
+
+  final c = Get.put(LoginC());
 
   CustomForm({
     Key? key,
     required this.title,
     required this.hintText,
-    this.obscureText = false,
     required this.controller,
-    this.masuk,
+    this.obscureText = false,
+
+    //
+    this.suffixIcon,
+    //this.press = () => c.hidden.toggle(),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           TextFormField(
             cursorColor: item,
-            keyboardType: masuk,
+            //keyboardType: masuk,
             controller: controller,
             obscureText: obscureText,
             decoration: InputDecoration(
+              suffixIcon: suffixIcon,
               hintText: hintText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(defaultRadius),
